@@ -1,0 +1,72 @@
+@font-face {
+  font-family: outfit;
+  src: url(../build/Outfit-Regular.ttf);
+}
+
+@font-face {
+  font-family: outfit-bold;
+  src: url(../build/Outfit-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: outfit-thin;
+  src: url(../build/Outfit-Light.ttf);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("https://cdn.mos.cms.futurecdn.net/oLMgm6qmfPahnSjaSdn9Da.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.textContainer {
+  padding: 1rem;
+  z-index: 1;
+  font-family: outfit;
+}
+
+.textOne,
+.textTwo,
+.textThree {
+  z-index: 99;
+  font-size: 62px;
+  font-weight: bold;
+  display: flex;
+  color: white;
+}
+
+.textThree {
+  justify-content: end;
+}
+
+.listContainer {
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
+  text-align: center;
+}
+
+.list {
+  font-family: outfit;
+  padding: 10px;
+  font-size: 26px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.aboutSection,
+.contactSection,
+.socialMediaSection {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
