@@ -1,16 +1,16 @@
 @font-face {
   font-family: outfit;
-  src: url(../build/Outfit-Regular.ttf);
+  src: url(../fonts/Outfit-Regular.ttf);
 }
 
 @font-face {
   font-family: outfit-bold;
-  src: url(../build/Outfit-SemiBold.ttf);
+  src: url(../fonts/Outfit-SemiBold.ttf);
 }
 
 @font-face {
   font-family: outfit-thin;
-  src: url(../build/Outfit-Light.ttf);
+  src: url(../fonts/Outfit-Light.ttf);
 }
 
 .imageContainer {
