@@ -25,7 +25,7 @@ function MainPage() {
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-    const startX = screenWidth / 4;
+    // const startX = screenWidth / 4;
     const startyX = -screenWidth / 4;
 
     gsap.fromTo(
@@ -67,6 +67,9 @@ function MainPage() {
     if (scrollContainer) {
       scrollContainer.addEventListener("scroll", handleScroll);
     }
+
+    // Initial parallax effect
+    handleScroll();
 
     return () => {
       if (scrollContainer) {
