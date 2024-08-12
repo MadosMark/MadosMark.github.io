@@ -118,8 +118,8 @@ function MainPage() {
                   key={index}
                   width="100%"
                   height="100%"
-                  autoPlay
-                  loop
+                  autoPlay={true}
+                  loop={true}
                   muted
                 >
                   <source src={item.src} type="video/mp4" />
