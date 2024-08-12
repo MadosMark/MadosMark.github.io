@@ -121,6 +121,7 @@ function MainPage() {
                   autoPlay={true}
                   loop={true}
                   muted
+                  playsInline
                 >
                   <source src={item.src} type="video/mp4" />
                   Your browser does not support the video tag.
