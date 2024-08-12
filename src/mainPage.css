@@ -38,7 +38,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../assets/studio.jpg");
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,8 +46,10 @@
 
 .textContainer {
   padding: 7rem 1rem;
-  z-index: 1;
+  z-index: 99;
   font-family: outfit;
+  inset: 0;
+  position: absolute;
 }
 
 .textOne,
@@ -74,6 +76,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  z-index: 99;
 }
 
 .list {
@@ -123,5 +126,11 @@
   padding: 2rem;
 }
 .image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.aboutImage {
+  height: 50%;
   object-fit: cover;
 }

@@ -18,14 +18,24 @@ function MainPage() {
       src: "",
     },
     {
+      type: "video",
+      src: "../assets/studde.mov",
+    },
+  ];
+
+  const about = [
+    {
       type: "image",
-      src: "https://imgv3.fotor.com/images/slider-image/A-clear-close-up-photo-of-a-woman.jpg",
+      src: "../assets/studio.jpg",
+    },
+    {
+      type: "",
+      src: "",
     },
   ];
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-    // const startX = screenWidth / 4;
     const startyX = -screenWidth / 4;
 
     gsap.fromTo(
@@ -38,12 +48,6 @@ function MainPage() {
       { x: startyX },
       { duration: 2, x: 0, ease: "slow" }
     );
-
-    // gsap.fromTo(
-    //   ".textThree",
-    //   { x: startX },
-    //   { duration: 2, x: 0, ease: "slow" }
-    // );
 
     const handleScroll = () => {
       if (!scrollContainerRef.current) return;
@@ -68,7 +72,6 @@ function MainPage() {
       scrollContainer.addEventListener("scroll", handleScroll);
     }
 
-    // Initial parallax effect
     handleScroll();
 
     return () => {
@@ -103,6 +106,30 @@ function MainPage() {
     <AnimatePresence>
       <div className="scrollContainer" ref={scrollContainerRef}>
         <div className="imageContainer scrollSection" ref={imageContainerRef}>
+          {media.map((item, index) => {
+            if (item.type === "image") {
+              return (
+                <img className="image" key={index} alt="media" src={item.src} />
+              );
+            } else if (item.type === "video") {
+              return (
+                <video
+                  className="image"
+                  key={index}
+                  width="100%"
+                  height="100%"
+                  autoPlay
+                  loop
+                  muted
+                >
+                  <source src={item.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              );
+            } else {
+              return null;
+            }
+          })}
           <div className="textContainer">
             <motion.div
               initial={{ opacity: 0 }}
@@ -148,24 +175,23 @@ function MainPage() {
           </div>
         </div>
         <div ref={aboutRef} className="aboutSection scrollSection">
-          {media.map((item, index) => {
+          {about.map((item, index) => {
             if (item.type === "image") {
               return (
                 <img
-                  className="image"
+                  className="aboutImage"
                   key={index}
                   alt="media"
                   src={item.src}
-                  width="100%"
-                  height="50%"
                 />
               );
             } else if (item.type === "video") {
               return (
                 <video
+                  className="aboutImage"
                   key={index}
                   width="100%"
-                  height="100%"
+                  height="50%"
                   autoPlay
                   loop
                   muted
@@ -173,19 +199,6 @@ function MainPage() {
                   <source src={item.src} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-              );
-            } else if (item.type === "youtube") {
-              const youtubeEmbedUrl = `https://www.youtube.com/embed/${item.src}`;
-              return (
-                <iframe
-                  key={index}
-                  width="100%"
-                  height="100%"
-                  src={youtubeEmbedUrl}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title="YouTube video"
-                ></iframe>
               );
             } else {
               return null;
