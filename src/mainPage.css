@@ -76,7 +76,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  z-index: 99;
+  z-index: ;
 }
 
 .list {
@@ -118,6 +118,7 @@
 }
 
 .aboutText {
+  background-color: whitesmoke;
   font-family: outfit;
   > p {
     font-family: outfit-thin;
@@ -131,6 +132,6 @@
 }
 
 .aboutImage {
-  height: 50%;
   object-fit: cover;
+  object-position: top;
 }

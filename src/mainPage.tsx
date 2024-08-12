@@ -26,7 +26,7 @@ function MainPage() {
   const about = [
     {
       type: "image",
-      src: "../assets/studio.jpg",
+      src: "../assets/tilde.jpg",
     },
     {
       type: "",
