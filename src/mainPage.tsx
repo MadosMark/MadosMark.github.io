@@ -2,6 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import "./mainPage.css";
+import tilde from "./assets/tilde.jpg";
+import studioImg from "./assets/studio.jpg";
+import studio2Img from "./assets/studio2.jpg";
+import studio3Img from "./assets/studio3.jpg";
+
+import studioMov from "./assets/studde.mov";
 
 function MainPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -19,18 +25,32 @@ function MainPage() {
     },
     {
       type: "video",
-      src: "../assets/studde.mov",
+      src: studioMov,
     },
   ];
 
   const about = [
     {
       type: "image",
-      src: "../assets/tilde.jpg",
+      src: tilde,
     },
     {
       type: "",
       src: "",
+    },
+  ];
+  const portfolio = [
+    {
+      type: "image",
+      src: studio2Img,
+    },
+    {
+      type: "image",
+      src: studioImg,
+    },
+    {
+      type: "image",
+      src: studio3Img,
     },
   ];
 
@@ -211,10 +231,76 @@ function MainPage() {
             <p>I have my own studio in Varberg, Sweden.</p>
           </div>
         </div>
-        <div
-          ref={portfolioRef}
-          className="portfolioSection scrollSection"
-        ></div>
+        <div ref={portfolioRef} className="portfolioSection scrollSection">
+          {/* {portfolio.map((item, index) => {
+            if (item.type === "image") {
+              return (
+                <img
+                  className="portfolioImage"
+                  key={index}
+                  alt="media"
+                  src={item.src}
+                />
+              );
+            } else if (item.type === "video") {
+              return (
+                <video
+                  className="portfolioImage"
+                  key={index}
+                  width="100%"
+                  height="50%"
+                  autoPlay
+                  loop
+                  muted
+                >
+                  <source src={item.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              );
+            } else {
+              return null;
+            }
+          })} */}
+          <div className="gallery">
+            <input type="checkbox" />
+            <img
+              src="https://picsum.photos/id/1028/300/300"
+              alt="a forest after an apocalypse"
+            />
+            <img
+              src="https://picsum.photos/id/15/300/300"
+              alt="a waterfall and many rocks"
+            />
+            <img
+              src="https://picsum.photos/id/1040/300/300"
+              alt="a house on a mountain"
+            />
+            <img
+              src="https://picsum.photos/id/106/300/300"
+              alt="sime pink flowers"
+            />
+            <img
+              src="https://picsum.photos/id/136/300/300"
+              alt="big rocks with some trees"
+            />
+            <img
+              src="https://picsum.photos/id/1039/300/300"
+              alt="a waterfall, a lot of tree and a great view from the sky"
+            />
+            <img
+              src="https://picsum.photos/id/110/300/300"
+              alt="a cool landscape"
+            />
+            <img
+              src="https://picsum.photos/id/1047/300/300"
+              alt="inside a town between two big buildings"
+            />
+            <img
+              src="https://picsum.photos/id/1057/300/300"
+              alt="a great view of the sea above the mountain"
+            />
+          </div>
+        </div>
         <div ref={contactRef} className="contactSection scrollSection">
           <h2>Contact Us</h2>
           <p>This is the Contact section content.</p>
