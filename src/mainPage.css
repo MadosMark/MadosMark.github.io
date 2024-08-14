@@ -32,6 +32,8 @@
 
 .scrollSection {
   scroll-snap-align: start;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .imageContainer {

@@ -76,11 +76,13 @@ function MainPage() {
       const portfolioPosition = portfolioRef.current?.offsetTop || 0;
       const contactPosition = contactRef.current?.offsetTop || 0;
 
-      if (scrollPosition >= contactPosition - window.innerHeight / 2) {
+      const halfWindowHeight = window.innerHeight / 2;
+
+      if (scrollPosition >= contactPosition - halfWindowHeight) {
         setCurrentPage("contact");
-      } else if (scrollPosition >= portfolioPosition - window.innerHeight / 2) {
+      } else if (scrollPosition >= portfolioPosition - halfWindowHeight) {
         setCurrentPage("portfolio");
-      } else if (scrollPosition >= aboutPosition - window.innerHeight / 2) {
+      } else if (scrollPosition >= aboutPosition - halfWindowHeight) {
         setCurrentPage("about");
       } else {
         setCurrentPage("home");
