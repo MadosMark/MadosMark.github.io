@@ -96,6 +96,10 @@ function MainPage() {
 
     handleScroll();
 
+    setTimeout(() => {
+      scrollContainer?.addEventListener("scroll", handleScroll);
+    }, 100);
+
     return () => {
       if (scrollContainer) {
         scrollContainer.removeEventListener("scroll", handleScroll);

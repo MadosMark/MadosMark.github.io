@@ -28,10 +28,11 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scroll-padding: 0;
 }
 
 .scrollSection {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -115,6 +116,7 @@
   background-color: whitesmoke;
   justify-content: center;
   gap: 20px;
+  height: 100vh;
 }
 
 .portfolioSection {
