@@ -120,7 +120,7 @@
 .portfolioSection {
   background-color: whitesmoke;
   overflow: hidden;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .aboutText {
@@ -147,7 +147,7 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  height: 33%;
+  height: 25%;
 }
 
 .contactText {
