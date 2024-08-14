@@ -7,6 +7,7 @@ import studio2Img from "./assets/tattoo2.jpg";
 import studio3Img from "./assets/tattoo3.jpg";
 
 import studioMov from "./assets/studde.mov";
+import gsap from "gsap";
 
 function MainPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -19,6 +20,10 @@ function MainPage() {
 
   const media = [
     {
+      type: "",
+      src: "",
+    },
+    {
       type: "video",
       src: studioMov,
     },
@@ -29,8 +34,11 @@ function MainPage() {
       type: "image",
       src: tilde,
     },
+    {
+      type: "",
+      src: "",
+    },
   ];
-
   const portfolio = [
     {
       type: "image",
@@ -47,6 +55,20 @@ function MainPage() {
   ];
 
   useEffect(() => {
+    const screenWidth = window.innerWidth;
+    const startyX = -screenWidth / 4;
+
+    gsap.fromTo(
+      ".textOne",
+      { x: startyX },
+      { duration: 2, x: 0, ease: "slow" }
+    );
+    gsap.fromTo(
+      ".textTwo",
+      { x: startyX },
+      { duration: 2, x: 0, ease: "slow" }
+    );
+
     const handleScroll = () => {
       if (!scrollContainerRef.current) return;
       const scrollPosition = scrollContainerRef.current.scrollTop;
@@ -73,6 +95,10 @@ function MainPage() {
     }
 
     handleScroll();
+
+    setTimeout(() => {
+      scrollContainer?.addEventListener("scroll", handleScroll);
+    }, 100);
 
     return () => {
       if (scrollContainer) {
@@ -149,6 +175,12 @@ function MainPage() {
             >
               Studio
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              className="textTwo"
+            ></motion.div>
           </div>
           <div className="listContainer">
             {["about", "portfolio", "contact"].map((section) => (
@@ -180,6 +212,21 @@ function MainPage() {
                   src={item.src}
                 />
               );
+            } else if (item.type === "video") {
+              return (
+                <video
+                  className="aboutImage"
+                  key={index}
+                  width="100%"
+                  height="50%"
+                  autoPlay
+                  loop
+                  muted
+                >
+                  <source src={item.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              );
             } else {
               return null;
             }
@@ -200,6 +247,21 @@ function MainPage() {
                   alt="media"
                   src={item.src}
                 />
+              );
+            } else if (item.type === "video") {
+              return (
+                <video
+                  className="portfolioImage"
+                  key={index}
+                  width="100%"
+                  height="50%"
+                  autoPlay
+                  loop
+                  muted
+                >
+                  <source src={item.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               );
             } else {
               return null;
@@ -225,12 +287,34 @@ function MainPage() {
               <g id="_9-Email_Support" data-name="9-Email Support">
                 <path
                   className="cls-1"
-                  d="M64 27a1 1 0 0 0-.35-.77L57 20.66V6a1 1 0 0 0-1-1H38.32L32.64.23a1 1 0 0 0-1.29 0L25.67 5H8a1 1 0 0 0-1 1v14.66L.36 26.23A1 1 0 0 0 0 27v36a1 1 0 0 0 1 1h62a1 1 0 0 0 1-1ZM2 61V28.41l9.5 8.56ZM32 42 8.6 21H55.4ZM54.5 21 32 42 9.5 21H6.41l25.29-22.4 25.3 22.4ZM59 61V36.97l9.5-8.56V61ZM9.5 43.03 54.5 43.03l2 1.76v15.21H7.5V44.79Z"
+                  d="M64 27a1 1 0 0 0-.35-.77L57 20.66V6a1 1 0 0 0-1-1H38.32L32.64.23a1 1 0 0 0-1.29 0L25.67 5H8a1 1 0 0 0-1 1v14.66L.36 26.23A1 1 0 0 0 0 27v36a1 1 0 0 0 1 1h62a1 1 0 0 0 1-1V27zm-7-3.73 4.27 3.58L57 29.33zm-25-21L35.21 5h-6.42zM9 7h46v23.49L32 43.84 9 30.49zM7 23.27v6.05l-4.27-2.47zm-5 5.47 20.15 11.7L2 60.59zM3.41 62l20.53-20.52 7.56 4.39a1 1 0 0 0 1 0l7.56-4.39L60.59 62zM62 60.59 41.85 40.44 62 28.74z"
+                />
+                <path
+                  className="cls-1"
+                  d="M46 24a14 14 0 1 0-14 14 14 14 0 0 0 14-14zm-26 0a12 12 0 1 1 12 12 12 12 0 0 1-12-12zM11 10v4h2v-3h3V9h-4a1 1 0 0 0-1 1zM11 16h2v2h-2z"
+                />
+                <path
+                  className="cls-1"
+                  d="M36 21a4 4 0 0 1-4 4 2 2 0 0 0-2 2v2h2v-2a6 6 0 1 0-6-6h2a4 4 0 0 1 8 0zM30 31h2v2h-2z"
                 />
               </g>
             </svg>
-            <a href="mailto:aurorainkstudio@gmail.com">
-              aurorainkstudio@gmail.com
+            <h2>Booking tattoo appointment</h2>
+            <p>
+              To book an appointment for a tattoo with me, please click forward
+              to my instagram page and send me a message.
+            </p>
+            <a href="https://www.google.com/" className="instagramButton">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+              >
+                <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
+              </svg>
             </a>
           </div>
         </div>
