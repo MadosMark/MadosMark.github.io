@@ -169,7 +169,10 @@
   width: 100%;
   background: transparent;
   border: none;
-
+  &:focus {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+  }
   &:active {
     > svg > path {
       fill: grey;
@@ -185,8 +188,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 30px;
   width: 100%;
+
+  &:focus {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+  }
 }
 
 .emailButton svg,
