@@ -168,6 +168,7 @@
 .instagramButton {
   width: 100%;
   background: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   border: none;
   &:focus {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -189,7 +190,7 @@
   justify-content: center;
   margin: 30px;
   width: 100%;
-
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   &:focus {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
