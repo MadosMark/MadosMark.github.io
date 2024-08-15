@@ -62,13 +62,14 @@
   font-size: 70px;
   font-weight: bold;
   display: flex;
-  color: white;
+  color: whitesmoke;
 }
 
 .textThree {
   justify-content: end;
   font-family: rocky;
   font-size: 40px;
+  color: whitesmoke;
 }
 
 .listContainer {
@@ -86,7 +87,7 @@
   font-family: outfit;
   padding: 10px;
   font-size: 18px;
-  color: white;
+  color: #cccccc;
   border: none;
   cursor: pointer;
   background: none;
@@ -145,7 +146,7 @@
 }
 
 .portfolioImage {
-  height: 30%;
+  height: 33%;
   width: 100%;
   object-fit: cover;
   object-position: center;
@@ -165,6 +166,7 @@
 }
 
 .instagramButton {
+  width: 100%;
   background: transparent;
   border: none;
 
@@ -173,4 +175,46 @@
       fill: grey;
     }
   }
+}
+
+.emailButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  width: 100%;
+}
+
+.emailButton svg,
+.emailButton .linkCopiedText {
+  position: absolute;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emailButton svg {
+  opacity: 1;
+  visibility: visible;
+}
+
+.emailButton.copied svg {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.emailButton.copied .linkCopiedText {
+  opacity: 1;
+  visibility: visible;
+}
+
+.linkCopiedText {
+  font-family: outfit-thin;
+  font-size: 1rem;
+  opacity: 0;
+  visibility: hidden;
 }

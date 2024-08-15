@@ -17,6 +17,7 @@ function MainPage() {
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
   const [currentPage, setCurrentPage] = useState("home");
+  const [emailCopied, setEmailCopied] = useState(false);
 
   const media = [
     {
@@ -126,6 +127,15 @@ function MainPage() {
     } else if (page === "contact") {
       scrollToSection(contactRef);
     }
+  };
+  const handleEmailCopy = () => {
+    const email = "aurorainkstudio@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      setEmailCopied(true);
+      setTimeout(() => {
+        setEmailCopied(false);
+      }, 2000);
+    });
   };
 
   return (
@@ -275,36 +285,31 @@ function MainPage() {
               Get in touch with me through email for future business
               collaborations, such as renting a place in my studio.
             </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 64 64"
-              width={50}
-              height={50}
+            <button
+              className={`emailButton ${emailCopied ? "copied" : ""}`}
+              onClick={handleEmailCopy}
             >
-              <defs>
-                <style>.cls-1</style>
-              </defs>
-              <g id="_9-Email_Support" data-name="9-Email Support">
-                <path
-                  className="cls-1"
-                  d="M64 27a1 1 0 0 0-.35-.77L57 20.66V6a1 1 0 0 0-1-1H38.32L32.64.23a1 1 0 0 0-1.29 0L25.67 5H8a1 1 0 0 0-1 1v14.66L.36 26.23A1 1 0 0 0 0 27v36a1 1 0 0 0 1 1h62a1 1 0 0 0 1-1V27zm-7-3.73 4.27 3.58L57 29.33zm-25-21L35.21 5h-6.42zM9 7h46v23.49L32 43.84 9 30.49zM7 23.27v6.05l-4.27-2.47zm-5 5.47 20.15 11.7L2 60.59zM3.41 62l20.53-20.52 7.56 4.39a1 1 0 0 0 1 0l7.56-4.39L60.59 62zM62 60.59 41.85 40.44 62 28.74z"
-                />
-                <path
-                  className="cls-1"
-                  d="M46 24a14 14 0 1 0-14 14 14 14 0 0 0 14-14zm-26 0a12 12 0 1 1 12 12 12 12 0 0 1-12-12zM11 10v4h2v-3h3V9h-4a1 1 0 0 0-1 1zM11 16h2v2h-2z"
-                />
-                <path
-                  className="cls-1"
-                  d="M36 21a4 4 0 0 1-4 4 2 2 0 0 0-2 2v2h2v-2a6 6 0 1 0-6-6h2a4 4 0 0 1 8 0zM30 31h2v2h-2z"
-                />
-              </g>
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width={50}
+                height={50}
+              >
+                <path d="M64 27a1 1 0 0 0-.35-.77L57 20.66V6a1 1 0 0 0-1-1H38.32L32.64.23a1 1 0 0 0-1.29 0L25.67 5H8a1 1 0 0 0-1 1v14.66L.36 26.23A1 1 0 0 0 0 27v36a1 1 0 0 0 1 1h62a1 1 0 0 0 1-1V27zm-7-3.73 4.27 3.58L57 29.33zm-25-21L35.21 5h-6.42zM9 7h46v23.49L32 43.84 9 30.49zM7 23.27v6.05l-4.27-2.47zm-5 5.47 20.15 11.7L2 60.59zM3.41 62l20.53-20.52 7.56 4.39a1 1 0 0 0 1 0l7.56-4.39L60.59 62zM62 60.59 41.85 40.44 62 28.74z" />
+                <path d="M46 24a14 14 0 1 0-14 14 14 14 0 0 0 14-14zm-26 0a12 12 0 1 1 12 12 12 12 0 0 1-12-12zM11 10v4h2v-3h3V9h-4a1 1 0 0 0-1 1zM11 16h2v2h-2z" />
+                <path d="M36 21a4 4 0 0 1-4 4 2 2 0 0 0-2 2v2h2v-2a6 6 0 1 0-6-6h2a4 4 0 0 1 8 0zM30 31h2v2h-2z" />
+              </svg>
+              <span className="linkCopiedText">Email copied</span>
+            </button>
             <h2>Booking tattoo appointment</h2>
             <p>
               To book an appointment for a tattoo with me, please click forward
               to my instagram page and send me a message.
             </p>
-            <a href="https://www.google.com/" className="instagramButton">
+            <a
+              href="https://www.instagram.com/aurorainkstudio/"
+              className="instagramButton"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
