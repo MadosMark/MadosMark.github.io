@@ -125,24 +125,30 @@
   justify-content: space-between;
 }
 
-.aboutText {
-  background-color: whitesmoke;
-  font-family: outfit;
-  > p {
-    font-family: outfit-thin;
-    margin: 0;
-  }
-  padding: 2rem;
-}
 .image {
   object-fit: cover;
   height: 100%;
 }
 
 .aboutImage {
-  height: 50%;
-  object-fit: cover;
-  object-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4rem;
+  background-image: linear-gradient(to bottom, transparent 30%, #f5f5f5 80%),
+    url(./assets/tilde.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.aboutText {
+  background-color: transparent;
+  font-family: outfit;
+  > p {
+    font-family: outfit-thin;
+    margin: 0;
+  }
+  padding: 2rem;
 }
 
 .portfolioImage {

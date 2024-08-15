@@ -212,39 +212,19 @@ function MainPage() {
           </div>
         </div>
         <div ref={aboutRef} className="aboutSection scrollSection">
-          {about.map((item, index) => {
-            if (item.type === "image") {
-              return (
-                <img
-                  className="aboutImage"
-                  key={index}
-                  alt="media"
-                  src={item.src}
-                />
-              );
-            } else if (item.type === "video") {
-              return (
-                <video
-                  className="aboutImage"
-                  key={index}
-                  width="100%"
-                  height="50%"
-                  autoPlay
-                  loop
-                  muted
-                >
-                  <source src={item.src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              );
-            } else {
-              return null;
-            }
-          })}
-          <div className="aboutText">
-            <h2>Aurora Ink Studio</h2>
-            <p>Hi, my name is Tilde and I am a tattoo artist.</p>
-            <p>I have my own studio in Varberg, Sweden.</p>
+          <div className="aboutImage">
+            <div className="aboutText">
+              <h2>Aurora Ink Studio</h2>
+              <p>
+                Hi, my name is Tilde and I work as a tattoo artist. I have been
+                tattoing for almost 3 years now.
+              </p>
+              <p>I have my own studio in Varberg, Sweden.</p>
+              <p>
+                I'm open for new exciting and fun projects, but I specializes in
+                Fine Line tattoing.
+              </p>
+            </div>
           </div>
         </div>
         <div ref={portfolioRef} className="portfolioSection scrollSection">
