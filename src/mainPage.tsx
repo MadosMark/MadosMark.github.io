@@ -238,7 +238,7 @@ function MainPage() {
           </div>
         </div>
         <div ref={portfolioRef} className="portfolioSection scrollSection">
-          {/* {portfolio.map((item, index) => {
+          {portfolio.map((item, index) => {
             if (item.type === "image") {
               return (
                 <img
@@ -266,7 +266,7 @@ function MainPage() {
             } else {
               return null;
             }
-          })} */}
+          })}
         </div>
         <div ref={contactRef} className="contactSection scrollSection">
           <div className="contactText">

@@ -24,7 +24,7 @@
 }
 
 .scrollContainer {
-  height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -121,7 +121,7 @@
 .portfolioSection {
   background-color: whitesmoke;
   overflow: hidden;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .aboutText {
@@ -141,10 +141,11 @@
 .aboutImage {
   height: 50%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 
 .portfolioImage {
+  height: 30%;
   width: 100%;
   object-fit: cover;
   object-position: center;
