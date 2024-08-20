@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./mainPage.css";
-import tilde from "./assets/tilde.jpg";
 import studioImg from "./assets/tattoo1.jpg";
 import studio2Img from "./assets/tattoo2.jpg";
 import studio3Img from "./assets/tattoo3.jpg";
-
+import studioMove from "./assets/stuuido.mov";
 import studioMov from "./assets/studde.mov";
 import gsap from "gsap";
 
@@ -21,25 +20,15 @@ function MainPage() {
 
   const media = [
     {
-      type: "",
-      src: "",
+      type: "video",
+      src: studioMove,
     },
     {
-      type: "video",
-      src: studioMov,
+      type: "",
+      src: "",
     },
   ];
 
-  const about = [
-    {
-      type: "image",
-      src: tilde,
-    },
-    {
-      type: "",
-      src: "",
-    },
-  ];
   const portfolio = [
     {
       type: "image",

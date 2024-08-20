@@ -124,6 +124,12 @@
   display: flex;
   flex-direction: column;
 }
+.portfolioSection {
+  @media (min-width: 1240px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
 
 .aboutSection {
   background-color: whitesmoke;
@@ -173,6 +179,10 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+  @media (min-width: 1240px) {
+    height: 100%;
+    width: 33%;
+  }
 }
 
 .contactText {
@@ -188,6 +198,9 @@
   > p {
     font-family: outfit-thin;
     margin: 0;
+  }
+  @media (min-width: 520px) {
+    width: 25rem;
   }
 }
 
