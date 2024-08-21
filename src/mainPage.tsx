@@ -5,8 +5,8 @@ import studioImg from "./assets/tattoo1.jpg";
 import studio2Img from "./assets/tattoo2.jpg";
 import studio3Img from "./assets/tattoo3.jpg";
 import studioMove from "./assets/stuuido.mov";
-import studioMov from "./assets/studde.mov";
 import gsap from "gsap";
+import { useMediaQuery } from "./contexts/MediaQueryContext";
 
 function MainPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -17,6 +17,9 @@ function MainPage() {
 
   const [currentPage, setCurrentPage] = useState("home");
   const [emailCopied, setEmailCopied] = useState(false);
+
+  const { matchedDevice } = useMediaQuery();
+  const isMobile = matchedDevice.includes("mobile");
 
   const media = [
     {
@@ -207,20 +210,38 @@ function MainPage() {
             </div>
           </div>
           <div ref={aboutRef} className="aboutSection scrollSection">
-            <div className="aboutImage">
-              <div className="aboutText">
-                <h2>Aurora Ink Studio</h2>
-                <p>
-                  Hi, my name is Tilde and I work as a tattoo artist. I have
-                  been tattoing for almost 3 years now.
-                </p>
-                <p>I have my own studio in Varberg, Sweden.</p>
-                <p>
-                  I'm open for new exciting and fun projects, but I specializes
-                  in Fine Line tattoing.
-                </p>
+            {isMobile ? (
+              <div className="aboutImage">
+                <div className="aboutText">
+                  <h2>Aurora Ink Studio</h2>
+                  <p>
+                    Hi, my name is Tilde and I work as a tattoo artist. I have
+                    been tattoing for almost 3 years now.
+                  </p>
+                  <p>I have my own studio in Varberg, Sweden.</p>
+                  <p>
+                    I'm open for new exciting and fun projects, but I
+                    specializes in Fine Line tattoing.
+                  </p>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="aboutPageDesktop">
+                <div className="aboutImage"></div>
+                <div className="aboutText">
+                  <h2>Aurora Ink Studio</h2>
+                  <p>
+                    Hi, my name is Tilde and I work as a tattoo artist. I have
+                    been tattoing for almost 3 years now.
+                  </p>
+                  <p>I have my own studio in Varberg, Sweden.</p>
+                  <p>
+                    I'm open for new exciting and fun projects, but I
+                    specializes in Fine Line tattoing.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
           <div ref={portfolioRef} className="portfolioSection scrollSection">
             {portfolio.map((item, index) => {

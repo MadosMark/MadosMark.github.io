@@ -144,10 +144,20 @@
     align-items: center;
   }
 }
+.aboutPageDesktop {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
 
 .aboutSection {
   background-color: whitesmoke;
   justify-content: start;
+  @media (min-width: 767px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .contactSection {
@@ -178,8 +188,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  @media (min-width: 767px) {
+    width: 50%;
+  }
 }
 .aboutText {
+  @media (min-width: 767px) {
+    width: 40%;
+  }
   background-color: transparent;
   font-family: outfit;
   > p {

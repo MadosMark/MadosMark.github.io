@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import MainPage from "./mainPage";
 import reportWebVitals from "./reportWebVitals";
+import MediaQueryProvider from "./contexts/MediaQueryContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <MainPage />
+    <MediaQueryProvider>
+      <MainPage />
+    </MediaQueryProvider>
   </React.StrictMode>
 );
 
