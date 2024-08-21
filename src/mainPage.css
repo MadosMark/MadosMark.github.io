@@ -92,15 +92,16 @@
 }
 
 .textThree {
-  top: 7rem;
-  right: 3rem;
   position: absolute;
   justify-content: end;
   font-family: rocky;
   font-size: 40px;
+  top: 11rem;
   color: whitesmoke;
   @media (min-width: 1240px) {
     font-size: 100px;
+    top: 7rem;
+    right: 3rem;
   }
 }
 
@@ -173,6 +174,7 @@
   padding-bottom: 4rem;
   background-image: linear-gradient(to bottom, transparent 30%, #f5f5f5 80%),
     url(./assets/tilde.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -200,6 +202,7 @@
 }
 
 .contactText {
+  z-index: 99;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -308,5 +311,7 @@
 }
 
 .bubblesBackground {
+  z-index: 10;
   height: 100%;
+  opacity: 0.3;
 }
