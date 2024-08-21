@@ -218,19 +218,21 @@
 }
 
 .contactText {
+  width: 80%;
+  padding: 1rem;
   z-index: 99;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
-  background-color: transparent;
+  background-color: whitesmoke;
   justify-content: center;
   align-items: center;
   gap: 15px;
   text-align: center;
   font-family: outfit;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   > p {
     font-family: outfit-thin;
     margin: 0;
@@ -329,5 +331,5 @@
 .bubblesBackground {
   z-index: 10;
   height: 100%;
-  opacity: 0.3;
+  opacity: 1;
 }
