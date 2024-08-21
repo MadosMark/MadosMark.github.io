@@ -150,6 +150,7 @@
 }
 
 .contactSection {
+  position: relative;
   background-color: whitesmoke;
   justify-content: center;
   gap: 20px;
@@ -199,10 +200,13 @@
 }
 
 .contactText {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  background-color: whitesmoke;
+  background-color: transparent;
   justify-content: center;
   align-items: center;
   gap: 15px;
