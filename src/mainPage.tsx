@@ -243,6 +243,7 @@ function MainPage() {
               </div>
             )}
           </div>
+
           <div ref={portfolioRef} className="portfolioSection scrollSection">
             {portfolio.map((item, index) => {
               if (item.type === "image") {
