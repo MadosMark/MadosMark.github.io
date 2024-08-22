@@ -26,10 +26,6 @@ function MainPage() {
       type: "video",
       src: studioMove,
     },
-    {
-      type: "",
-      src: "",
-    },
   ];
 
   const portfolio = [
@@ -133,7 +129,9 @@ function MainPage() {
   return (
     <AnimatePresence>
       <div className="pageWrapper">
-        <div className="listContainer">
+        <div
+          className={currentPage === "contact" ? "listFooter" : "listContainer"}
+        >
           {["about", "portfolio", "contact"].map((section) => (
             <motion.button
               key={section}
@@ -345,6 +343,7 @@ function MainPage() {
                 d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"
               />
             </svg>
+            <footer className="footer"></footer>
           </div>
         </div>
       </div>

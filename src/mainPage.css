@@ -105,15 +105,21 @@
   }
 }
 
-.listContainer {
+.listContainer,
+.listFooter {
   position: fixed;
   width: 100%;
   bottom: 1rem;
   text-align: center;
   display: flex;
   justify-content: center;
+  transition: bottom 0.5s ease-in-out;
   gap: 1rem;
   z-index: 99;
+}
+.listFooter {
+  transition: bottom 0.5s ease-in-out;
+  bottom: 5rem;
 }
 
 .list {
@@ -128,7 +134,7 @@
 }
 
 .list.active {
-  color: black;
+  color: #fd7474;
 }
 
 .aboutSection,
@@ -164,7 +170,6 @@
   position: relative;
   background-color: whitesmoke;
   justify-content: center;
-  gap: 20px;
 }
 
 .portfolioSection {
@@ -233,7 +238,6 @@
   gap: 15px;
   text-align: center;
   font-family: outfit;
-  /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
   > p {
     font-family: outfit-thin;
     margin: 0;
@@ -335,4 +339,10 @@
   z-index: 10;
   height: 100%;
   opacity: 1;
+}
+
+.footer {
+  height: 10rem;
+  background: #ffffff;
+  box-shadow: inset -7px 7px 14px #e0e0e0, inset 7px -7px 14px #ffffff;
 }
