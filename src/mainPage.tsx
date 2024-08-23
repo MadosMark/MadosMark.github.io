@@ -344,7 +344,6 @@ function MainPage() {
               />
             </svg>
             <footer className="footer">
-              {" "}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
