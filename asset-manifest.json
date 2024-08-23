@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.55394287.css",
-    "main.js": "/static/js/main.eaa2d8ad.js",
+    "main.css": "/static/css/main.11b2fd2c.css",
+    "main.js": "/static/js/main.1bd9c206.js",
     "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
     "static/media/stuuido.mov": "/static/media/stuuido.5a7c075ef9fe18fbee60.mov",
     "static/media/tilde.jpg": "/static/media/tilde.57ddfe18c1cec72ddbd5.jpg",
@@ -14,12 +14,12 @@
     "static/media/Outfit-Light.ttf": "/static/media/Outfit-Light.27737e30f9f52f95ba31.ttf",
     "static/media/Andasia.ttf": "/static/media/Andasia.24dc017297a63194ec9a.ttf",
     "index.html": "/index.html",
-    "main.55394287.css.map": "/static/css/main.55394287.css.map",
-    "main.eaa2d8ad.js.map": "/static/js/main.eaa2d8ad.js.map",
+    "main.11b2fd2c.css.map": "/static/css/main.11b2fd2c.css.map",
+    "main.1bd9c206.js.map": "/static/js/main.1bd9c206.js.map",
     "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.55394287.css",
-    "static/js/main.eaa2d8ad.js"
+    "static/css/main.11b2fd2c.css",
+    "static/js/main.1bd9c206.js"
   ]
 }
