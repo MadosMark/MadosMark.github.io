@@ -118,6 +118,7 @@
   z-index: 99;
 }
 .listFooter {
+  transition-delay: 0;
   transition: bottom 0.5s ease-in-out;
   bottom: 5rem;
 }
@@ -134,7 +135,7 @@
 }
 
 .list.active {
-  color: #fd7474;
+  color: black;
 }
 
 .aboutSection,
@@ -169,7 +170,6 @@
 .contactSection {
   position: relative;
   background-color: whitesmoke;
-  justify-content: center;
 }
 
 .portfolioSection {
@@ -227,13 +227,13 @@
   padding: 1rem;
   z-index: 99;
   position: absolute;
+  top: 2rem;
   color: whitesmoke;
   left: 50%;
   transform: translateX(-50%);
   mix-blend-mode: difference;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 15px;
   text-align: center;
@@ -342,7 +342,16 @@
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: end;
   height: 10rem;
   background: #ffffff;
   box-shadow: inset -7px 7px 14px #e0e0e0, inset 7px -7px 14px #ffffff;
+}
+
+.footerText {
+  font-family: outfit-thin;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
 }
