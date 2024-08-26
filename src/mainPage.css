@@ -221,7 +221,7 @@
   padding: 1rem;
   z-index: 99;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   color: whitesmoke;
   left: 50%;
   transform: translateX(-50%);
@@ -238,6 +238,20 @@
   }
   @media (min-width: 520px) {
     width: 25rem;
+    font-size: 14px;
+    gap: 10px;
+  }
+  @media (min-height: 580px) {
+    top: 3rem;
+  }
+  @media (min-height: 668px) {
+    top: 8rem;
+  }
+  @media (min-height: 845px) {
+    top: 11rem;
+  }
+  @media (min-height: 933px) {
+    top: 15rem;
   }
 }
 
