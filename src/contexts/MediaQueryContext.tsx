@@ -61,9 +61,11 @@ const MediaQueryProvider = ({ children }: MediaQueryContextProps) => {
         newMatch = device as DeviceType;
       }
     }
+    // eslint-disable-next-line eqeqeq
     if (newMatch != value.matchedDevice) {
       setValue({ matchedDevice: newMatch });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [windowWidth]);
 
   return (
