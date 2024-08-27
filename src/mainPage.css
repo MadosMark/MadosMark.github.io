@@ -211,17 +211,45 @@
     width: 50%;
   }
 }
-.aboutText {
+.aboutTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: 100%;
   @media (min-width: 767px) {
     width: 40%;
   }
   background-color: transparent;
   font-family: outfit;
+
   > p {
     font-family: outfit-thin;
     margin: 0;
   }
+}
+.aboutTextDesktop {
+  mix-blend-mode: difference;
+  color: whitesmoke;
   padding: 2rem;
+}
+.bubblesAboutPage {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  transform: rotate(180deg);
+}
+.aboutTextMobile {
+  margin-bottom: 1rem;
+  padding: 2rem;
+  > p {
+    font-family: outfit-thin;
+    margin: 0;
+  }
+  > h2 {
+    font-family: outfit;
+  }
 }
 
 .portfolioImage {
