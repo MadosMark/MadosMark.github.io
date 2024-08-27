@@ -86,6 +86,12 @@
   font-weight: bold;
   display: flex;
   color: whitesmoke;
+  @media (min-width: 620px) {
+    font-size: 80px;
+  }
+  @media (min-width: 800px) {
+    font-size: 100px;
+  }
   @media (min-width: 1240px) {
     font-size: 130px;
   }
@@ -95,12 +101,26 @@
   position: absolute;
   justify-content: end;
   font-family: rocky;
-  font-size: 40px;
+  font-size: 45px;
   top: 11rem;
   color: whitesmoke;
+  @media (max-width: 374px) {
+    font-size: 45px;
+    top: 16rem;
+  }
+  @media (min-width: 620px) {
+    font-size: 55px;
+    top: 10rem;
+    right: 3rem;
+  }
+  @media (min-width: 800px) {
+    font-size: 80px;
+    top: 10rem;
+    right: 3rem;
+  }
   @media (min-width: 1240px) {
     font-size: 100px;
-    top: 7rem;
+    top: 9rem;
     right: 3rem;
   }
 }
@@ -140,7 +160,7 @@
   flex-direction: column;
 }
 .portfolioSection {
-  @media (min-width: 1240px) {
+  @media (min-width: 820px) {
     flex-direction: row;
     align-items: center;
   }
@@ -210,7 +230,7 @@
   object-fit: cover;
   z-index: 97;
   object-position: center;
-  @media (min-width: 1240px) {
+  @media (min-width: 820px) {
     height: 80%;
     width: 33%;
   }
@@ -275,6 +295,11 @@
   &:focus {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
+  &:active {
+    > svg > path {
+      fill: grey;
+    }
+  }
 }
 
 .emailButton svg,
@@ -297,6 +322,7 @@
 }
 
 .emailButton.copied .linkCopiedText {
+  color: whitesmoke;
   opacity: 1;
   visibility: visible;
 }
