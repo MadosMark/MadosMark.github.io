@@ -27,7 +27,6 @@
   position: relative;
   tex-align: center;
   user-select: none;
-  background-image: linear-gradient(to bottom, transparent 30%, #f5f5f5 80%);
   background-color: whitesmoke;
   @media (min-width: 1540px) {
     display: flex;
@@ -219,7 +218,7 @@
   position: relative;
   height: 100%;
   @media (min-width: 767px) {
-    width: 40%;
+    width: 50%;
   }
   background-color: transparent;
   font-family: outfit;
@@ -232,15 +231,15 @@
 .aboutTextDesktop {
   mix-blend-mode: difference;
   color: whitesmoke;
-  padding: 2rem;
+  padding: 8rem;
 }
 .bubblesAboutPage {
   position: absolute;
   height: 100%;
   width: 100%;
-
   transform: rotate(180deg);
 }
+
 .aboutTextMobile {
   margin-bottom: 1rem;
   padding: 2rem;
@@ -252,7 +251,6 @@
     font-family: outfit;
   }
 }
-
 .portfolioImage {
   height: 33%;
   width: 100%;
