@@ -205,6 +205,7 @@ function MainPage() {
                 transition={{ duration: 1.5 }}
                 className="textTwo"
               ></motion.div>
+              <div className="mouse"></div>
             </div>
           </div>
           <div ref={aboutRef} className="aboutSection scrollSection">
