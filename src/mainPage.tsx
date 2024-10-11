@@ -17,6 +17,7 @@ function MainPage() {
 
   const [currentPage, setCurrentPage] = useState("home");
   const [emailCopied, setEmailCopied] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   const { matchedDevice } = useMediaQuery();
   const isMobile = matchedDevice.includes("mobile");
@@ -47,16 +48,18 @@ function MainPage() {
     const screenWidth = window.innerWidth;
     const startyX = -screenWidth / 4;
 
-    gsap.fromTo(
-      ".textOne",
-      { x: startyX },
-      { duration: 2, x: 0, ease: "slow" }
-    );
-    gsap.fromTo(
-      ".textTwo",
-      { x: startyX },
-      { duration: 2, x: 0, ease: "slow" }
-    );
+    if (isVideoReady) {
+      gsap.fromTo(
+        ".textOne",
+        { x: startyX },
+        { duration: 2, x: 0, ease: "slow" }
+      );
+      gsap.fromTo(
+        ".textTwo",
+        { x: startyX },
+        { duration: 2, x: 0, ease: "slow" }
+      );
+    }
 
     const handleScroll = () => {
       if (!scrollContainerRef.current) return;
@@ -94,7 +97,7 @@ function MainPage() {
         scrollContainer.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
+  }, [isVideoReady]);
 
   const scrollToSection = (ref: any) => {
     if (scrollContainerRef.current && ref.current) {
@@ -172,6 +175,7 @@ function MainPage() {
                     loop={true}
                     muted
                     playsInline
+                    onLoadedData={() => setIsVideoReady(true)}
                   >
                     <source src={item.src} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -181,31 +185,33 @@ function MainPage() {
                 return null;
               }
             })}
-            <div className="textContainer">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2 }}
-                className="textOne"
-              >
-                Aurora Ink
-              </motion.div>
+            {isVideoReady && (
+              <div className="textContainer">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2 }}
+                  className="textOne"
+                >
+                  Aurora Ink
+                </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 2 }}
-                className="textThree"
-              >
-                Studio
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.5 }}
-                className="textTwo"
-              ></motion.div>
-            </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.5, duration: 2 }}
+                  className="textThree"
+                >
+                  Studio
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1.5 }}
+                  className="textTwo"
+                ></motion.div>
+              </div>
+            )}
           </div>
           <div ref={aboutRef} className="aboutSection scrollSection">
             {isMobile ? (
