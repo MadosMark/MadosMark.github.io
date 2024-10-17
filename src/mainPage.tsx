@@ -318,9 +318,10 @@ function MainPage() {
                     key={index}
                     width="100%"
                     height="0%"
-                    autoPlay
-                    loop
                     muted
+                    autoPlay={true}
+                    loop={true}
+                    playsInline
                   >
                     <source src={item.src} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -336,9 +337,10 @@ function MainPage() {
                     key={index}
                     width="100%"
                     height="0%"
-                    autoPlay
-                    loop
+                    autoPlay={true}
+                    loop={true}
                     muted
+                    playsInline
                   >
                     <source src={item.src} type="video/mp4" />
                   </motion.video>
