@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9d69f26.css",
-    "main.js": "/static/js/main.d9eaf916.js",
+    "main.css": "/static/css/main.09a70756.css",
+    "main.js": "/static/js/main.05dbb963.js",
     "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/yingyangmovie.mov": "/static/media/yingyangmovie.85c370455010344ec1c1.mov",
+    "static/media/weddingmovie.mov": "/static/media/weddingmovie.23101dd1dc3fbdd82742.mov",
     "static/media/stuuido.mov": "/static/media/stuuido.5a7c075ef9fe18fbee60.mov",
+    "static/media/hairmovie.mov": "/static/media/hairmovie.40102a74389500cacdc9.mov",
     "static/media/tilde.jpg": "/static/media/tilde.57ddfe18c1cec72ddbd5.jpg",
-    "static/media/tattoo3.jpg": "/static/media/tattoo3.2f35368e35fd784ba3d5.jpg",
-    "static/media/tattoo1.jpg": "/static/media/tattoo1.299cc52f232e93066592.jpg",
-    "static/media/tattoo2.jpg": "/static/media/tattoo2.ef8f724ddb62073bba5e.jpg",
     "static/media/Rockybilly.ttf": "/static/media/Rockybilly.028655494c60619766ff.ttf",
     "static/media/Outfit-SemiBold.ttf": "/static/media/Outfit-SemiBold.ea851e9b6c1d21f620c1.ttf",
     "static/media/Outfit-Regular.ttf": "/static/media/Outfit-Regular.e853df41b41bc9489a8b.ttf",
     "static/media/Outfit-Light.ttf": "/static/media/Outfit-Light.27737e30f9f52f95ba31.ttf",
     "static/media/Andasia.ttf": "/static/media/Andasia.24dc017297a63194ec9a.ttf",
     "index.html": "/index.html",
-    "main.f9d69f26.css.map": "/static/css/main.f9d69f26.css.map",
-    "main.d9eaf916.js.map": "/static/js/main.d9eaf916.js.map",
+    "main.09a70756.css.map": "/static/css/main.09a70756.css.map",
+    "main.05dbb963.js.map": "/static/js/main.05dbb963.js.map",
     "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9d69f26.css",
-    "static/js/main.d9eaf916.js"
+    "static/css/main.09a70756.css",
+    "static/js/main.05dbb963.js"
   ]
 }
