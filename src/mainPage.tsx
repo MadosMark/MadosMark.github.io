@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./mainPage.css";
-import studioImg from "./assets/tattoo1.jpg";
-import studio2Img from "./assets/tattoo2.jpg";
-import studio3Img from "./assets/tattoo3.jpg";
 import studioMove from "./assets/stuuido.mov";
+import tattoomovie from "./assets/tattoomovie.mov";
 import gsap from "gsap";
 import { useMediaQuery } from "./contexts/MediaQueryContext";
 
@@ -18,6 +16,8 @@ function MainPage() {
   const [currentPage, setCurrentPage] = useState("home");
   const [emailCopied, setEmailCopied] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [isPortfolioVisible, setIsPortfolioVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const { matchedDevice } = useMediaQuery();
   const isMobile = matchedDevice.includes("mobile");
@@ -31,16 +31,16 @@ function MainPage() {
 
   const portfolio = [
     {
-      type: "image",
-      src: studioImg,
+      type: "video",
+      src: tattoomovie,
     },
     {
-      type: "image",
-      src: studio3Img,
+      type: "video",
+      src: tattoomovie,
     },
     {
-      type: "image",
-      src: studio2Img,
+      type: "video",
+      src: tattoomovie,
     },
   ];
 
@@ -70,13 +70,36 @@ function MainPage() {
 
       const halfWindowHeight = window.innerHeight / 2;
 
-      if (scrollPosition >= contactPosition - halfWindowHeight) {
-        setCurrentPage("contact");
-      } else if (scrollPosition >= portfolioPosition - halfWindowHeight) {
+      if (
+        scrollPosition >= portfolioPosition - halfWindowHeight &&
+        scrollPosition < contactPosition
+      ) {
         setCurrentPage("portfolio");
+
+        if (!hasAnimated) {
+          setIsPortfolioVisible(true);
+          setHasAnimated(true);
+        }
+      } else if (scrollPosition >= contactPosition - halfWindowHeight) {
+        if (hasAnimated) {
+          setIsPortfolioVisible(true);
+        } else {
+          setIsPortfolioVisible(false);
+        }
+        setCurrentPage("contact");
       } else if (scrollPosition >= aboutPosition - halfWindowHeight) {
+        if (hasAnimated) {
+          setIsPortfolioVisible(true);
+        } else {
+          setIsPortfolioVisible(false);
+        }
         setCurrentPage("about");
       } else {
+        if (hasAnimated) {
+          setIsPortfolioVisible(true);
+        } else {
+          setIsPortfolioVisible(false);
+        }
         setCurrentPage("home");
       }
     };
@@ -97,7 +120,7 @@ function MainPage() {
         scrollContainer.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [isVideoReady]);
+  }, [hasAnimated, isVideoReady]);
 
   const scrollToSection = (ref: any) => {
     if (scrollContainerRef.current && ref.current) {
@@ -128,6 +151,8 @@ function MainPage() {
       }, 2000);
     });
   };
+
+  const portfolioDelays = [0.2, 0, 0.2];
 
   return (
     <AnimatePresence>
@@ -269,6 +294,7 @@ function MainPage() {
 
           <div ref={portfolioRef} className="portfolioSection scrollSection">
             {portfolio.map((item, index) => {
+              const delay = portfolioDelays[index] || 0;
               if (item.type === "image") {
                 return (
                   <img
@@ -280,18 +306,23 @@ function MainPage() {
                 );
               } else if (item.type === "video") {
                 return (
-                  <video
+                  <motion.video
+                    initial={{ opacity: 1 }}
+                    animate={
+                      isPortfolioVisible ? { height: "95%" } : { height: "0%" }
+                    }
+                    transition={{ delay: delay, duration: 2 }}
                     className="portfolioImage"
                     key={index}
                     width="100%"
-                    height="50%"
+                    height="0%"
                     autoPlay
                     loop
                     muted
                   >
                     <source src={item.src} type="video/mp4" />
                     Your browser does not support the video tag.
-                  </video>
+                  </motion.video>
                 );
               } else {
                 return null;

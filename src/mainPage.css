@@ -258,7 +258,6 @@
   z-index: 97;
   object-position: center;
   @media (min-width: 820px) {
-    height: 80%;
     width: 33%;
   }
 }
