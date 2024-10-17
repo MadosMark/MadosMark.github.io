@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./mainPage.css";
 import studioMove from "./assets/stuuido.mov";
-import tattoomovie from "./assets/tattoomovie.mov";
+import hairmovie from "./assets/hairmovie.mov";
+import weddingmovie from "./assets/weddingmovie.mov";
+import yingyangmovie from "./assets/yingyangmovie.mov";
 import gsap from "gsap";
 import { useMediaQuery } from "./contexts/MediaQueryContext";
 
@@ -32,15 +34,15 @@ function MainPage() {
   const portfolio = [
     {
       type: "video",
-      src: tattoomovie,
+      src: hairmovie,
     },
     {
       type: "video",
-      src: tattoomovie,
+      src: weddingmovie,
     },
     {
       type: "video",
-      src: tattoomovie,
+      src: yingyangmovie,
     },
   ];
 
