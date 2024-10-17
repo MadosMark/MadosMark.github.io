@@ -307,7 +307,7 @@ function MainPage() {
                   />
                 );
               } else if (item.type === "video") {
-                return (
+                return !isMobile ? (
                   <motion.video
                     initial={{ opacity: 1 }}
                     animate={
@@ -324,6 +324,23 @@ function MainPage() {
                   >
                     <source src={item.src} type="video/mp4" />
                     Your browser does not support the video tag.
+                  </motion.video>
+                ) : (
+                  <motion.video
+                    initial={{ opacity: 1 }}
+                    animate={
+                      isPortfolioVisible ? { height: "33%" } : { height: "0%" }
+                    }
+                    transition={{ delay: delay, duration: 2 }}
+                    className="portfolioImage"
+                    key={index}
+                    width="100%"
+                    height="0%"
+                    autoPlay
+                    loop
+                    muted
+                  >
+                    <source src={item.src} type="video/mp4" />
                   </motion.video>
                 );
               } else {
