@@ -19,6 +19,8 @@ function MainPage() {
   const [emailCopied, setEmailCopied] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [isPortfolioVisible, setIsPortfolioVisible] = useState(false);
+  const [isContactVisible, setIsContactVisible] = useState(false);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const { matchedDevice } = useMediaQuery();
@@ -46,7 +48,17 @@ function MainPage() {
     },
   ];
 
+  const preloadVideos = (videos: Array<{ src: string }>) => {
+    videos.forEach((video) => {
+      const videoElement = document.createElement("video");
+      videoElement.src = video.src;
+      videoElement.preload = "auto";
+      videoElement.load();
+    });
+  };
+
   useEffect(() => {
+    preloadVideos(portfolio);
     const screenWidth = window.innerWidth;
     const startyX = -screenWidth / 4;
 
@@ -83,25 +95,18 @@ function MainPage() {
           setHasAnimated(true);
         }
       } else if (scrollPosition >= contactPosition - halfWindowHeight) {
-        if (hasAnimated) {
-          setIsPortfolioVisible(true);
-        } else {
-          setIsPortfolioVisible(false);
-        }
         setCurrentPage("contact");
+        if (!hasAnimated) {
+          setIsContactVisible(true);
+          setHasAnimated(true);
+        }
       } else if (scrollPosition >= aboutPosition - halfWindowHeight) {
-        if (hasAnimated) {
-          setIsPortfolioVisible(true);
-        } else {
-          setIsPortfolioVisible(false);
-        }
         setCurrentPage("about");
-      } else {
-        if (hasAnimated) {
-          setIsPortfolioVisible(true);
-        } else {
-          setIsPortfolioVisible(false);
+        if (!hasAnimated) {
+          setIsAboutVisible(true);
+          setHasAnimated(true);
         }
+      } else {
         setCurrentPage("home");
       }
     };
@@ -193,8 +198,11 @@ function MainPage() {
                 );
               } else if (item.type === "video") {
                 return (
-                  <video
+                  <motion.video
                     className="image"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 1.5 }}
                     key={index}
                     width="100%"
                     height="100%"
@@ -206,7 +214,7 @@ function MainPage() {
                   >
                     <source src={item.src} type="video/mp4" />
                     Your browser does not support the video tag.
-                  </video>
+                  </motion.video>
                 );
               } else {
                 return null;
@@ -243,7 +251,16 @@ function MainPage() {
           <div ref={aboutRef} className="aboutSection scrollSection">
             {isMobile ? (
               <div className="aboutImage">
-                <div className="aboutTextMobile">
+                <motion.div
+                  className="aboutTextMobile"
+                  initial={{ opacity: 0 }}
+                  animate={
+                    isAboutVisible
+                      ? { y: 0, opacity: 1 }
+                      : { y: 40, opacity: 0 }
+                  }
+                  transition={{ delay: 0.2, duration: 1 }}
+                >
                   <h2>Aurora Ink Studio</h2>
                   <p>
                     Hi, my name is Tilde and I work as a tattoo artist. I have
@@ -254,12 +271,11 @@ function MainPage() {
                     I'm open for new exciting and fun projects, but I
                     specializes in Fine Line tattoing.
                   </p>
-                </div>
+                </motion.div>
               </div>
             ) : (
               <div className="aboutPageDesktop">
                 <div className="aboutImage"></div>
-
                 <div className="aboutTextContainer">
                   <svg
                     className="bubblesAboutPage"
@@ -277,7 +293,16 @@ function MainPage() {
                       d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"
                     />
                   </svg>
-                  <div className="aboutTextDesktop">
+                  <motion.div
+                    className="aboutTextDesktop"
+                    initial={{ opacity: 0 }}
+                    animate={
+                      isAboutVisible
+                        ? { y: 0, opacity: 1 }
+                        : { y: 40, opacity: 0 }
+                    }
+                    transition={{ delay: 0.2, duration: 1 }}
+                  >
                     <h2>Aurora Ink Studio</h2>
                     <p>
                       Hi, my name is Tilde and I work as a tattoo artist. I have
@@ -288,7 +313,7 @@ function MainPage() {
                       I'm open for new exciting and fun projects, but I
                       specializes in Fine Line tattoing.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             )}
@@ -351,7 +376,12 @@ function MainPage() {
             })}
           </div>
           <div ref={contactRef} className="contactSection scrollSection">
-            <div className="contactText">
+            <motion.div
+              className="contactText"
+              initial={{ opacity: 0 }}
+              animate={isContactVisible ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.2, duration: 1 }}
+            >
               <h2>Contact Me</h2>
               <p>
                 Get in touch with me through email for future business
@@ -393,7 +423,7 @@ function MainPage() {
                   <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
                 </svg>
               </a>
-            </div>
+            </motion.div>
             <svg
               className="bubblesBackground"
               preserveAspectRatio="xMidYMid slice"
@@ -423,8 +453,8 @@ function MainPage() {
             <footer className="footer">
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2 }}
+                animate={isContactVisible ? { y: 0, opacity: 1 } : { y: -50 }}
+                transition={{ duration: 1 }}
                 className="footerText"
               >
                 Aurora Ink Studio ©
