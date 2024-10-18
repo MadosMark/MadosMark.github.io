@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./mainPage.css";
 import studioMove from "./assets/stuuido.mov";
@@ -33,34 +33,22 @@ function MainPage() {
     },
   ];
 
-  const portfolio = useMemo(
-    () => [
-      {
-        type: "video",
-        src: hairmovie,
-      },
-      {
-        type: "video",
-        src: weddingmovie,
-      },
-      {
-        type: "video",
-        src: yingyangmovie,
-      },
-    ],
-    []
-  );
-  const preloadVideos = (videos: Array<{ src: string }>) => {
-    videos.forEach((video) => {
-      const videoElement = document.createElement("video");
-      videoElement.src = video.src;
-      videoElement.preload = "auto";
-      videoElement.load();
-    });
-  };
+  const portfolio = [
+    {
+      type: "video",
+      src: hairmovie,
+    },
+    {
+      type: "video",
+      src: weddingmovie,
+    },
+    {
+      type: "video",
+      src: yingyangmovie,
+    },
+  ];
 
   useEffect(() => {
-    preloadVideos(portfolio);
     const screenWidth = window.innerWidth;
     const startyX = -screenWidth / 4;
 
@@ -129,7 +117,7 @@ function MainPage() {
         scrollContainer.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [hasAnimated, isVideoReady, portfolio]);
+  }, [hasAnimated, isVideoReady]);
 
   const scrollToSection = (ref: any) => {
     if (scrollContainerRef.current && ref.current) {
