@@ -18,7 +18,9 @@ function MainPage() {
   const [isPortfolioVisible, setIsPortfolioVisible] = useState(false);
   const [isContactVisible, setIsContactVisible] = useState(false);
   const [isAboutVisible, setIsAboutVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [hasAboutAnimated, setHasAboutAnimated] = useState(false);
+  const [hasPortfolioAnimated, setHasPortfolioAnimated] = useState(false);
+  const [hasContactAnimated, setHasContactAnimated] = useState(false);
 
   const { matchedDevice } = useMediaQuery();
   const isMobile = matchedDevice.includes("mobile");
@@ -76,21 +78,21 @@ function MainPage() {
         scrollPosition < contactPosition
       ) {
         setCurrentPage("portfolio");
-        if (!hasAnimated) {
+        if (!hasPortfolioAnimated) {
           setIsPortfolioVisible(true);
-          setHasAnimated(true);
+          setHasPortfolioAnimated(true);
         }
       } else if (scrollPosition >= contactPosition - halfWindowHeight) {
         setCurrentPage("contact");
-        if (!hasAnimated) {
+        if (!hasContactAnimated) {
           setIsContactVisible(true);
-          setHasAnimated(true);
+          setHasContactAnimated(true);
         }
       } else if (scrollPosition >= aboutPosition - halfWindowHeight) {
         setCurrentPage("about");
-        if (!hasAnimated) {
+        if (!hasAboutAnimated) {
           setIsAboutVisible(true);
-          setHasAnimated(true);
+          setHasAboutAnimated(true);
         }
       } else {
         setCurrentPage("home");
@@ -113,7 +115,12 @@ function MainPage() {
         scrollContainer.removeEventListener("scroll", handleScroll);
       }
     };
-  }, [hasAnimated, isVideoReady]);
+  }, [
+    hasAboutAnimated,
+    hasContactAnimated,
+    hasPortfolioAnimated,
+    isVideoReady,
+  ]);
 
   const scrollToSection = (ref: any) => {
     if (scrollContainerRef.current && ref.current) {
