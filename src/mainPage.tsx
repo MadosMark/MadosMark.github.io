@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./mainPage.css";
 import studioMove from "./assets/stuuido.mov";
-import hairmovie from "./assets/hairmovie.mov";
+// import hairmovie from "./assets/hairmovie.mov";
 // import weddingmovie from "./assets/weddi.mp4";
-import yingyangmovie from "./assets/yingyangmovie.mov";
+// import yingyangmovie from "./assets/yingyangmovie.mov";
 import gsap from "gsap";
 import { useMediaQuery } from "./contexts/MediaQueryContext";
 
