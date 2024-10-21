@@ -76,7 +76,10 @@ function MainPage() {
         scrollPosition < contactPosition
       ) {
         setCurrentPage("portfolio");
-        setIsPortfolioVisible(true);
+        if (!hasAnimated) {
+          setIsPortfolioVisible(true);
+          setHasAnimated(true);
+        }
       } else if (scrollPosition >= contactPosition - halfWindowHeight) {
         setCurrentPage("contact");
         if (!hasAnimated) {
