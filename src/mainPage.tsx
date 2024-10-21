@@ -24,7 +24,6 @@ function MainPage() {
   const isMobile = matchedDevice.includes("mobile");
 
   const weddingMovie = require("./assets/wedding.mp4");
-
   const media = [
     {
       type: "video",
