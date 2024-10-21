@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./mainPage.css";
 import studioMove from "./assets/stuuido.mov";
 import hairmovie from "./assets/hairmovie.mov";
-import weddingmovie from "./assets/weddingmovie.mov";
+// import weddingmovie from "./assets/weddi.mp4";
 import yingyangmovie from "./assets/yingyangmovie.mov";
 import gsap from "gsap";
 import { useMediaQuery } from "./contexts/MediaQueryContext";
@@ -23,6 +23,8 @@ function MainPage() {
   const [isAboutVisible, setIsAboutVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
+  const weddi = require("./assets/weddi.mp4");
+
   const { matchedDevice } = useMediaQuery();
   const isMobile = matchedDevice.includes("mobile");
 
@@ -36,15 +38,15 @@ function MainPage() {
   const portfolio = [
     {
       type: "video",
-      src: hairmovie,
+      src: weddi,
     },
     {
       type: "video",
-      src: weddingmovie,
+      src: weddi,
     },
     {
       type: "video",
-      src: yingyangmovie,
+      src: weddi,
     },
   ];
 
