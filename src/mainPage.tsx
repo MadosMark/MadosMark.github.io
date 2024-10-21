@@ -251,7 +251,7 @@ function MainPage() {
                   }
                   transition={{ delay: 0.2, duration: 1 }}
                 >
-                  {/* <h2>Aurora Ink Studio</h2> */}
+                  <h2>Aurora Ink Studio</h2>
                   <p>
                     Hi, my name is Tilde and I work as a tattoo artist. I have
                     been tattoing for almost 3 years now.
