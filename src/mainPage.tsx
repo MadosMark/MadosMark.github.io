@@ -21,8 +21,9 @@ function MainPage() {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const { matchedDevice } = useMediaQuery();
-  const weddingMovie = require("./assets/wedding.mp4");
   const isMobile = matchedDevice.includes("mobile");
+
+  const weddingMovie = require("./assets/wedding.mp4");
 
   const media = [
     {
@@ -188,7 +189,7 @@ function MainPage() {
                     className="image"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 1.5 }}
+                    transition={{ delay: 0.3, duration: 3 }}
                     key={index}
                     width="100%"
                     height="100%"
