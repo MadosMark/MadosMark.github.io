@@ -69,7 +69,6 @@ function MainPage() {
       const aboutPosition = aboutRef.current?.offsetTop || 0;
       const portfolioPosition = portfolioRef.current?.offsetTop || 0;
       const contactPosition = contactRef.current?.offsetTop || 0;
-
       const halfWindowHeight = window.innerHeight / 2;
 
       if (
