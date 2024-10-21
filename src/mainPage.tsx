@@ -329,7 +329,7 @@ function MainPage() {
                     className="portfolioImage"
                     key={index}
                     width="100%"
-                    height="100%"
+                    height="0%"
                     muted
                     autoPlay={true}
                     loop={true}
