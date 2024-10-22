@@ -26,6 +26,9 @@ function MainPage() {
   const isMobile = matchedDevice.includes("mobile");
 
   const weddingMovie = require("./assets/wedding.mp4");
+  const wowMovie = require("./assets/wow.mp4");
+  const hairMovie = require("./assets/hairmovie.mp4");
+
   const media = [
     {
       type: "video",
@@ -36,7 +39,7 @@ function MainPage() {
   const portfolio = [
     {
       type: "video",
-      src: weddingMovie,
+      src: wowMovie,
     },
     {
       type: "video",
@@ -44,7 +47,7 @@ function MainPage() {
     },
     {
       type: "video",
-      src: weddingMovie,
+      src: hairMovie,
     },
   ];
 
@@ -373,7 +376,7 @@ function MainPage() {
               className="contactText"
               initial={{ opacity: 0 }}
               animate={isContactVisible ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: 0.2, duration: 1 }}
+              transition={{ duration: 1 }}
             >
               <h2>Contact Me</h2>
               <p>
@@ -446,7 +449,7 @@ function MainPage() {
             <footer className="footer">
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={isContactVisible ? { y: 0, opacity: 1 } : { y: -50 }}
+                animate={isContactVisible ? { y: 0, opacity: 1 } : { y: -30 }}
                 transition={{ duration: 1 }}
                 className="footerText"
               >
