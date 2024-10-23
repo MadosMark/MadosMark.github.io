@@ -59,12 +59,12 @@ function MainPage() {
       gsap.fromTo(
         ".textOne",
         { x: startyX },
-        { duration: 2, x: 0, ease: "slow" }
+        { duration: 3, x: 0, ease: "slow" }
       );
       gsap.fromTo(
         ".textTwo",
         { x: startyX },
-        { duration: 2, x: 0, ease: "slow" }
+        { duration: 3, x: 0, ease: "slow" }
       );
     }
 
@@ -197,7 +197,7 @@ function MainPage() {
                   <motion.video
                     className="image"
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    animate={isVideoReady ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: 0.3, duration: 3 }}
                     key={index}
                     width="100%"
@@ -221,7 +221,7 @@ function MainPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 2 }}
+                  transition={{ delay: 1.5, duration: 2 }}
                   className="textOne"
                 >
                   Aurora Ink
@@ -230,7 +230,7 @@ function MainPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 1.5, duration: 2 }}
+                  transition={{ delay: 2.5, duration: 2 }}
                   className="textThree"
                 >
                   Studio
@@ -238,7 +238,7 @@ function MainPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 1.5 }}
+                  transition={{ duration: 2.5 }}
                   className="textTwo"
                 ></motion.div>
               </div>
