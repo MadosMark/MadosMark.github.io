@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./mainPage.css";
-import studioMove from "./assets/stuuido.mov";
 import gsap from "gsap";
 import { useMediaQuery } from "./contexts/MediaQueryContext";
 
@@ -24,15 +23,27 @@ function MainPage() {
 
   const { matchedDevice } = useMediaQuery();
   const isMobile = matchedDevice.includes("mobile");
+  const isTablet = matchedDevice.includes("tablet");
 
   const weddingMovie = require("./assets/wedding.mp4");
   const wowMovie = require("./assets/wow.mp4");
   const hairMovie = require("./assets/hairmovie.mp4");
+  const studioInk = require("./assets/auroraInk.mp4");
+  const mask = require("./assets/mask.mp4");
+  const king = require("./assets/king.mp4");
 
   const media = [
     {
       type: "video",
-      src: studioMove,
+      src: king,
+    },
+    {
+      type: "video",
+      src: studioInk,
+    },
+    {
+      type: "video",
+      src: mask,
     },
   ];
 
@@ -192,30 +203,53 @@ function MainPage() {
                     src={item.src}
                   />
                 );
-              } else if (item.type === "video") {
-                return (
-                  <motion.video
-                    className="image"
-                    initial={{ opacity: 0 }}
-                    animate={isVideoReady ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ delay: 0.3, duration: 3 }}
-                    key={index}
-                    width="100%"
-                    height="100%"
-                    autoPlay={true}
-                    loop={true}
-                    muted
-                    playsInline
-                    onLoadedData={() => setIsVideoReady(true)}
-                  >
-                    <source src={item.src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </motion.video>
-                );
-              } else {
-                return null;
               }
+              return null;
             })}
+
+            {!isTablet && !isMobile
+              ? media
+                  .filter((item) => item.type === "video")
+                  .slice(0, 3)
+                  .map((item, index) => (
+                    <motion.video
+                      initial={{ opacity: 0 }}
+                      animate={isVideoReady ? { opacity: 1 } : { opacity: 0 }}
+                      transition={{ delay: 0.3, duration: 3 }}
+                      className="image"
+                      key={index}
+                      width="32%"
+                      height="100%"
+                      muted
+                      autoPlay={true}
+                      loop={true}
+                      playsInline
+                      onLoadedData={() => setIsVideoReady(true)}
+                    >
+                      <source src={item.src} type="video/mp4" />
+                    </motion.video>
+                  ))
+              : (() => {
+                  const videos = media.filter((item) => item.type === "video");
+                  const secondVideo = videos.length > 1 ? videos[1] : videos[0];
+                  return secondVideo ? (
+                    <motion.video
+                      initial={{ opacity: 0 }}
+                      animate={isVideoReady ? { opacity: 1 } : { opacity: 0 }}
+                      transition={{ delay: 0.3, duration: 3 }}
+                      className="imageMobile"
+                      width="100%"
+                      height="100%"
+                      autoPlay={true}
+                      loop={true}
+                      muted
+                      playsInline
+                      onLoadedData={() => setIsVideoReady(true)}
+                    >
+                      <source src={secondVideo.src} type="video/mp4" />
+                    </motion.video>
+                  ) : null;
+                })()}
             {isVideoReady && (
               <div className="textContainer">
                 <motion.div

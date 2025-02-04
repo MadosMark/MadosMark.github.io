@@ -73,7 +73,7 @@
   inset: 0;
   position: absolute;
   @media (min-width: 1240px) {
-    padding: 7rem 3rem;
+    padding: 7rem 5rem;
   }
 }
 
@@ -111,17 +111,17 @@
   @media (min-width: 620px) {
     font-size: 55px;
     top: 10rem;
-    right: 3rem;
+    right: 4rem;
   }
   @media (min-width: 800px) {
     font-size: 80px;
     top: 10rem;
-    right: 3rem;
+    right: 4rem;
   }
   @media (min-width: 1240px) {
     font-size: 100px;
     top: 9rem;
-    right: 3rem;
+    right: 4rem;
   }
 }
 
@@ -193,6 +193,12 @@
 }
 
 .image {
+  object-fit: cover;
+  padding: 5px;
+  padding-top: 0px;
+}
+
+.imageMobile {
   object-fit: cover;
 }
 

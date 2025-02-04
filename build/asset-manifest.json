@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.0efc7dc4.css",
-    "main.js": "/static/js/main.0dc6e58a.js",
+    "main.css": "/static/css/main.73fdce99.css",
+    "main.js": "/static/js/main.04ac989c.js",
     "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/mask.mp4": "/static/media/mask.4022c9444441ae73cdd5.mp4",
+    "static/media/king.mp4": "/static/media/king.fe6396f407495b3e7dd9.mp4",
+    "static/media/auroraInk.mp4": "/static/media/auroraInk.e581c732b6057cd1b41c.mp4",
     "static/media/wedding.mp4": "/static/media/wedding.fd09be1741f6f54480f3.mp4",
-    "static/media/stuuido.mov": "/static/media/stuuido.5a7c075ef9fe18fbee60.mov",
     "static/media/wow.mp4": "/static/media/wow.8be54b3b03583821d389.mp4",
     "static/media/hairmovie.mp4": "/static/media/hairmovie.c8b75cca69224fd73030.mp4",
     "static/media/tilde.jpg": "/static/media/tilde.57ddfe18c1cec72ddbd5.jpg",
@@ -14,12 +16,12 @@
     "static/media/Outfit-Light.ttf": "/static/media/Outfit-Light.27737e30f9f52f95ba31.ttf",
     "static/media/Andasia.ttf": "/static/media/Andasia.24dc017297a63194ec9a.ttf",
     "index.html": "/index.html",
-    "main.0efc7dc4.css.map": "/static/css/main.0efc7dc4.css.map",
-    "main.0dc6e58a.js.map": "/static/js/main.0dc6e58a.js.map",
+    "main.73fdce99.css.map": "/static/css/main.73fdce99.css.map",
+    "main.04ac989c.js.map": "/static/js/main.04ac989c.js.map",
     "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0efc7dc4.css",
-    "static/js/main.0dc6e58a.js"
+    "static/css/main.73fdce99.css",
+    "static/js/main.04ac989c.js"
   ]
 }
