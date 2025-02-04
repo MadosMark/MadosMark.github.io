@@ -218,8 +218,8 @@ function MainPage() {
                       transition={{ delay: 0.3, duration: 3 }}
                       className="image"
                       key={index}
-                      width="32%"
-                      height="100%"
+                      width="100%"
+                      height="95%"
                       muted
                       autoPlay={true}
                       loop={true}
@@ -293,13 +293,12 @@ function MainPage() {
                 >
                   <h2>Aurora Ink Studio</h2>
                   <p>
-                    Hi, my name is Tilde and I work as a tattoo artist. I have
-                    been tattoing for almost 3 years now.
-                  </p>
-                  <p>I have my own studio in Varberg, Sweden.</p>
-                  <p>
-                    I'm open for new exciting and fun projects, but I
-                    specializes in Fine Line tattoing.
+                    Hey!<br></br> I'm Tilde - a passionate tattoo artist with
+                    nearly 4 years of experience. I specialize in Fine Line
+                    tattooing, creating delicate and intricate designs with
+                    precision and artistry. While Fine Line is my specialty, I´m
+                    always excited to take on new and creative projects. <br />
+                    Let’s bring your ideas to life!
                   </p>
                 </motion.div>
               </div>
@@ -334,15 +333,13 @@ function MainPage() {
                     transition={{ delay: 0.2, duration: 1 }}
                   >
                     <h2>Aurora Ink Studio</h2>
-                    <p>
-                      Hi, my name is Tilde and I work as a tattoo artist. I have
-                      been tattoing for almost 3 years now.
-                    </p>
-                    <p>I have my own studio in Varberg, Sweden.</p>
-                    <p>
-                      I'm open for new exciting and fun projects, but I
-                      specializes in Fine Line tattoing.
-                    </p>
+                    Hey!<br></br> I'm Tilde - a passionate tattoo artist with
+                    nearly 4 years of experience. <br />I specialize in Fine
+                    Line tattooing, creating delicate and intricate designs with
+                    precision and artistry. <br />
+                    While Fine Line is my specialty, I´m always excited to take
+                    on new and creative projects. <br />
+                    Let’s bring your ideas to life!
                   </motion.div>
                 </div>
               </div>
