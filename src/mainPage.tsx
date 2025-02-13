@@ -279,7 +279,7 @@ function MainPage() {
             )}
           </div>
           <div ref={aboutRef} className="aboutSection scrollSection">
-            {isMobile ? (
+            {isMobile || isTablet ? (
               <div className="aboutImage">
                 <motion.div
                   className="aboutTextMobile"

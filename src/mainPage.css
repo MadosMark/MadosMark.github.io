@@ -178,7 +178,7 @@
 .aboutSection {
   background-color: whitesmoke;
   justify-content: start;
-  @media (min-width: 767px) {
+  @media (min-width: 1024px) {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -220,7 +220,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  @media (min-width: 767px) {
+  @media (min-width: 1024px) {
     width: 50%;
   }
 }
