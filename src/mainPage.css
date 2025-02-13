@@ -247,7 +247,7 @@
   padding: 8rem;
 }
 .bubblesAboutPage {
-  /* position: absolute; */
+  position: absolute;
   height: 100%;
   width: 100%;
   transform: rotate(180deg);

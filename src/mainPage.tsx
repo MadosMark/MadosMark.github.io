@@ -330,7 +330,7 @@ function MainPage() {
                         ? { y: 0, opacity: 1 }
                         : { y: 40, opacity: 0 }
                     }
-                    transition={{ delay: 0.2, duration: 1 }}
+                    transition={{ duration: 1 }}
                   >
                     <h2>Aurora Ink Studio</h2>
                     Hey!<br></br> I'm Tilde - a passionate tattoo artist with
