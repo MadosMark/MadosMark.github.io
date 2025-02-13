@@ -263,6 +263,9 @@
   > h2 {
     font-family: outfit;
   }
+  @media (min-width: 620px) {
+    margin-bottom: 3rem;
+  }
 }
 .portfolioImage {
   width: 100%;

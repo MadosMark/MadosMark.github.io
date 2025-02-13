@@ -294,10 +294,11 @@ function MainPage() {
                   <h2>Aurora Ink Studio</h2>
                   <p>
                     Hey!<br></br> I'm Tilde - a passionate tattoo artist with
-                    nearly 4 years of experience. I specialize in Fine Line
-                    tattooing, creating delicate and intricate designs with
-                    precision and artistry. While Fine Line is my specialty, I´m
-                    always excited to take on new and creative projects. <br />
+                    nearly 4 years of experience. <br />I specialize in Fine
+                    Line tattooing, creating delicate and intricate designs with
+                    precision and artistry. <br />
+                    While Fine Line is my specialty, I´m always excited to take
+                    on new and creative projects. <br />
                     Let’s bring your ideas to life!
                   </p>
                 </motion.div>
