@@ -157,7 +157,7 @@ function MainPage() {
     }
   };
   const handleEmailCopy = () => {
-    const email = "aurorainkstudio@gmail.com";
+    const email = "aurorasinkstudio@gmail.com";
     navigator.clipboard.writeText(email).then(() => {
       setEmailCopied(true);
       setTimeout(() => {
